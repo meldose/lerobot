@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# created function for encode_sign_magnitude
 
 def encode_sign_magnitude(value: int, sign_bit_index: int):
     """
