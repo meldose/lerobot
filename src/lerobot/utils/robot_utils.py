@@ -15,6 +15,7 @@
 import platform
 import time
 
+# created function for busy_wait
 
 def busy_wait(seconds):
     if platform.system() == "Darwin" or platform.system() == "Windows":
@@ -28,6 +29,7 @@ def busy_wait(seconds):
         if seconds > 0:
             time.sleep(seconds)
 
+# created function for safe_disconnect
 
 def safe_disconnect(func):
     # TODO(aliberts): Allow to pass custom exceptions
