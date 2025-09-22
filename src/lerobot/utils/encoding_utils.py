@@ -26,6 +26,7 @@ def encode_sign_magnitude(value: int, sign_bit_index: int):
     direction_bit = 1 if value < 0 else 0
     return (direction_bit << sign_bit_index) | magnitude
 
+# function for decode_sign_magnitude
 
 def decode_sign_magnitude(encoded_value: int, sign_bit_index: int):
     """
@@ -36,6 +37,7 @@ def decode_sign_magnitude(encoded_value: int, sign_bit_index: int):
     magnitude = encoded_value & magnitude_mask
     return -magnitude if direction_bit else magnitude
 
+# function for encode_twos_complement
 
 def encode_twos_complement(value: int, n_bytes: int):
     """
@@ -56,6 +58,7 @@ def encode_twos_complement(value: int, n_bytes: int):
 
     return (1 << bit_width) + value
 
+# function for decode_twos_complement
 
 def decode_twos_complement(value: int, n_bytes: int) -> int:
     """
