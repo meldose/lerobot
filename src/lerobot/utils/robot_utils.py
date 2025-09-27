@@ -43,3 +43,6 @@ def safe_disconnect(func):
             raise e
 
     return wrapper
+
+busy_wait(seconds=1.0)
+safe_disconnect(func=function)

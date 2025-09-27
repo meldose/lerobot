@@ -92,3 +92,7 @@ class TimeBenchmark(ContextDecorator):
     @property
     def result_ms(self):
         return self.result * 1e3
+
+if __name__ == "__main__":
+    with TimeBenchmark(print=True):
+        time.sleep(1)

@@ -81,3 +81,8 @@ class ProcessSignalHandler:
             except (ValueError, OSError):  # pragma: no cover – unlikely but safe
                 # Signal not supported or we are in a non-main thread.
                 continue
+
+if __name__ == "__main__":  # pragma: no cover
+    signal_handler = ProcessSignalHandler(True)
+    while not signal_handler.shutdown_event.is_set():
+        signal.pause()
