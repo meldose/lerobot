@@ -48,5 +48,5 @@ def safe_disconnect(func):
 
 # calling all the functions
 busy_wait(seconds=1.0)
-a=safe_disconnect(func=robot.disconnect)
-a(robot)
+wrapper=safe_disconnect(func=robot.disconnect)
+wrapper(robot)
