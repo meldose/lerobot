@@ -14,7 +14,7 @@
 
 import platform
 import time
-
+from lerobot.robots import Robot # imported Robot class
 # created function for busy_wait
 
 def busy_wait(seconds):
@@ -29,8 +29,10 @@ def busy_wait(seconds):
         if seconds > 0:
             time.sleep(seconds)
 
-# created function for safe_disconnect
 
+robot=Robot() # crearted Robot object
+
+# created function for safe_disconnect
 def safe_disconnect(func):
     # TODO(aliberts): Allow to pass custom exceptions
     # (e.g. ThreadServiceExit, KeyboardInterrupt, SystemExit, UnpluggedError, DynamixelCommError)
@@ -44,5 +46,7 @@ def safe_disconnect(func):
 
     return wrapper
 
+# calling all the functions
 busy_wait(seconds=1.0)
-safe_disconnect(func=function)
+a=safe_disconnect(func=robot.disconnect)
+a(robot)
