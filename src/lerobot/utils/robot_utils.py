@@ -18,7 +18,7 @@ from lerobot.robots import Robot # imported Robot class
 # created function for busy_wait
 
 def busy_wait(seconds):
-    if platform.system() == "Darwin" or platform.system() == "Windows" or platform.system()=="Linux":
+    if platform.system() == "Darwin" or platform.system() == "Windows" or platform.system()=="linux":
         # On Mac and Windows, `time.sleep` is not accurate and we need to use this while loop trick,
         # but it consumes CPU cycles.
         end_time = time.perf_counter() + seconds
